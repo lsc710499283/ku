@@ -1,0 +1,30 @@
+[
+	{
+		"id": "10005",
+		"title": "网易轻松一刻",
+		"author": "网易轻松一刻",
+		"sort_type": "脱口秀",
+		"pic_url": "img/show/10005.jpg"
+	},
+	{
+		"id": "10006",
+		"title": "电影不无聊",
+		"author": "电影不无聊",
+		"sort_type": "娱乐八卦",
+		"pic_url": "img/show/10006.jpg"
+	},
+	{
+		"id": "10007",
+		"title": "晨曦微露电台",
+		"author": "晨曦微露",
+		"sort_type": "治愈系",
+		"pic_url": "img/show/10007.jpg"
+	},
+	{
+		"id": "10008",
+		"title": "晓寞の音乐",
+		"author": "寂晓寞czm",
+		"sort_type": "音乐推荐",
+		"pic_url": "img/show/10008.jpg"
+	}
+]

@@ -1,0 +1,30 @@
+[
+	{
+		"id": "10001",
+		"title": "贴吧泄密局",
+		"author": "百度乐播",
+		"sort_type": "脱口秀",
+		"pic_url": "img/show/10001.jpg"
+	},
+	{
+		"id": "10002",
+		"title": "娱乐圈大揭秘",
+		"author": "揭秘小菌",
+		"sort_type": "娱乐八卦",
+		"pic_url": "img/show/10002.jpg"
+	},
+	{
+		"id": "10003",
+		"title": "乐动时光",
+		"author": "百度乐播",
+		"sort_type": "治愈系",
+		"pic_url": "img/show/10003.jpg"
+	},
+	{
+		"id": "10004",
+		"title": "晚安好音乐",
+		"author": "百度音乐",
+		"sort_type": "音乐推荐",
+		"pic_url": "img/show/10004.jpg"
+	}
+]

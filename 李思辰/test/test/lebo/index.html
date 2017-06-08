@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>百度乐播-首页</title>
+	</head>
+	<style>
+		*{margin: 0;padding: 0;list-style: none;}
+		img{float: left;}
+		a:hover{cursor:pointer}
+		a{text-decoration: none;}
+		body{background:#efefef;}
+		header{width:100%;background: #252525;margin-bottom: 15px;}
+		#top{height:100px;width:1200px;margin: 0 auto;background:url(img/logo.jpg) no-repeat;}
+		#nav{height:100px;padding-left: 150px;}
+		#nav li{float: left;padding: 0 30px;font: 18px/100px "微软雅黑";color: #FFF}
+		#nav li:hover{background: #191919;color: #f60;}
+		#main{width:1200px;height:740px;margin: 0 auto;}
+		#tupian{width:240px;height:740px;float: right;border-left: 1px solid #ccc}
+		#con{height: 740px;float: left;width:930px;background: #fff;margin-right: 25px;}
+		#con ol{height:253px;padding: 15px 15px 50px;}
+		ol #daojishi{width:210px;height:253px;float: left;}
+		#daojishi h4{height:43px;border: 1px solid #ddd; border-top: 0;float: left;width:193px;
+		font-size: 24px;line-height: 43px;font-weight: 100;padding-left: 15px;}
+		
+		#lunbotu{width:670px;height:253px;float: right;padding-left: 20px;position: relative;overflow: hidden;}
+		#lunbotu img{width:670px;height:253px;position: relative;}
+		#rongqi {position: absolute;width:670px;height:759px;top:-253px;}
+		h5,h6{width:30px;height:40px;position: absolute;background: url(img/icon.png);z-index: 20;display: none;}
+		h5{background-position: -167px 1px;top:380px;left: 0px;}
+		h6{background-position: -132px 1px;top:380px;right: 0px;}
+		
+		#ssr{width:900px;padding: 15px;height:420px;}
+		#ssr h3{font-weight: 100;}
+		#ssr h3 a{font-size: 16px;color: #f60;}
+		#ssr ul{width:900px;height:360px;}
+		.shoucang:hover{cursor:pointer}
+		.shoucang{position: absolute; background:#f2fe40;right: 12px;top: 12px;padding: 0 2px;font-size: 14px;border-radius: 4px;display: none;}
+		#ssr ul li{padding: 7px;float: left;width:23%;position: relative;}
+		li img{width:100%;}
+		li p{height:250px;line-height: 50px;}
+		li span{margin-left: 15px;font: 14px  "微软雅黑"; color: #aaa;}
+		#ssr li a{background: #f60;color: #fff;font:14px "微软雅黑";border-radius: 5px;padding: 3px 5px;}
+	</style>
+	<body>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/template.js"></script>
+		<header>
+			<div id="top">
+				<ul id="nav">
+					<a><li style="background: #191919;color: #f60;;">首页</li></a>
+					<a><li>分类</li></a>
+					<a><li>歌单</li></a>
+					<a href="shoucang.html"><li>我的收藏</li></a>
+					<a><li>下载客户端</li></a>
+				</ul>
+			</div>
+		</header>
+		
+		<div id="main">
+			<div id="con">
+				<ol>
+					<div id="daojishi">
+						<img style="width: 100%;" src="img/tuijian.jpg"/>
+						<h4 id="jishi"></h4>
+					</div>
+					<script>
+						var shijian = new Date();
+						var a = shijian.getHours();
+						var b = shijian.getMinutes();
+						var c =shijian.getSeconds();
+						var timer = setInterval(function(){
+						var shijian = new Date();
+						var a = shijian.getHours();
+						var b = shijian.getMinutes();
+						var c =shijian.getSeconds();
+						if(b<10){b="0"+b}
+						if(c<10){c="0"+c}
+							jishi.innerHTML = a+":"+b+":"+c;
+						},1000)
+						if(b<10){b="0"+b}
+						if(c<10){c="0"+c}
+						jishi.innerHTML = a+":"+b+":"+c;
+					</script>
+					
+					<div id="lunbotu">
+						<div id="rongqi">
+						<a><h5 id="zuo"></h5></a>
+						<a><h6 id="you"></h6></a>
+						<img src="img/banner/banner4.jpg"/>
+						<img src="img/banner/banner1.jpg"/>
+						<img src="img/banner/banner2.jpg"/>
+						<img src="img/banner/banner3.jpg"/>
+						<img src="img/banner/banner4.jpg"/>
+						<img src="img/banner/banner1.jpg"/>
+						</div>
+					</div>
+				</ol>
+				
+				<div id="ssr">
+					<h3>节目推荐 /<a id="huan">　[换一批]</a></h3>
+					<ul class="sr"></ul>
+				</div>
+				
+			</div>
+			<div id="tupian"><img src="img/main-right.png"/></div>
+		</div>
+		<script>
+			var n=0;
+			var timer = setInterval(foo,2000);
+
+			function foo(){
+			if(n==4){n=0;
+					$("#rongqi img").css("top",0)
+			}
+				n++;
+				
+				$("#rongqi img").animate({top:("-253"*n)})
+			}
+			
+						
+			$("#lunbotu").on("mouseenter",function(){
+				clearInterval(timer);
+				$("#zuo").fadeIn(400);
+				$("#you").fadeIn(400);
+			})
+			$("#lunbotu").on("mouseleave",function(){
+				timer = setInterval(foo,2000);
+				$("#zuo").fadeOut(400);
+				$("#you").fadeOut(400);
+			})
+			
+			$("#you").on("click",function(){
+			if(n==4){n=0;
+					$("#rongqi img").css("top","0")
+			}
+				n++;
+				$("#rongqi img").stop(true).animate({top:("-253"*n)})
+			})
+			
+			$("#zuo").on("click",function(){
+				n--;
+			if(n<=-2){n=2;
+					$("#rongqi img").css("top","-759px")
+			}
+				$("#rongqi img").stop(true).animate({top:("-253"*n)})
+			})
+			
+			
+			$("img").mouseover(function(){
+				var cc=$(this);
+				$(this).fadeTo(400,.8,function(){
+					cc.fadeTo(400,1);
+				})
+			})
+		</script>
+		
+		<script>
+			$.get("js/show1.json",function(data){
+				var html1 = template("ssrjs",{"lists":data});
+				$('#ssr').append(html1);
+				$(".sr").eq(0).css({"position":"absolute"});
+			})
+			$.get("js/show2.json",function(data){
+				var html2 = template("ssrjs",{"lists":data});
+				$('#ssr').append(html2);
+				$(".sr").eq(1).css({"display":"none","position":"absolute"});
+				$("#huan").on("click",function(){
+					$('.sr').fadeToggle(1234);
+				})
+				$(".sr li").on("mouseenter",function(){
+					$(this).find(".shoucang").stop().show(500);
+				})
+				$(".sr li").on("mouseleave",function(){
+					$(this).find(".shoucang").stop().hide(500);
+				})
+				var shuzu = [];	
+			$(".shoucang").on("click",function(){
+				var buer = false;
+				var guxinhai = $(this).attr("data-id");
+				console.log($.cookie("mingzi"))
+				if($.cookie("mingzi")){
+					
+					shuzu=JSON.parse($.cookie("mingzi"));
+					shuzu.forEach(function(v){
+						if(v==guxinhai){buer=true}
+					})
+				if(!buer){shuzu.push(guxinhai);}
+							
+				}else{
+					shuzu=[guxinhai]
+				}
+				shuzu=JSON.stringify(shuzu);
+				$.cookie("mingzi",shuzu);
+				})
+			})
+			
+		</script>
+		<script id="ssrjs" type="text/html">
+					<ul class="sr">
+						{{each lists as value}}
+						<li>
+							<div data-id="{{value.id}}" class="shoucang">收藏</div>
+							<img src="{{value.pic_url}}"/>
+							<p>{{value.title}}</p>
+							<a>{{value.sort_type}}</a>
+							<span>{{value.author}}</span>
+						</li>
+						{{/each}}
+					</ul>
+		</script>
+	</body>
+</html>

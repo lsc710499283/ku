@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{margin: 0;padding: 0;list-style: none;}
+		a{text-decoration: none;}
+		body{background:#efefef;}
+		header{width:100%;background: #252525;margin-bottom: 20px;}
+		#top{height:100px;width:1200px;margin: 0 auto;background:url(img/logo.jpg) no-repeat;}
+		#nav{height:100px;padding-left: 150px;}
+		#nav li{float: left;padding: 0 30px;font: 18px/100px "微软雅黑";color: #FFF}
+		#nav li:hover{background: #191919;color: #f60;}
+		
+		#main{width:1200px;height:740px;margin: 0 auto;background: #fff;}
+		
+		
+		
+	</style>
+		<script src="js/jquery-1.11.3.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/template.js"></script>
+	<body>
+		<header>
+			<div id="top">
+				<ul id="nav">
+					<a href="index.html"><li>首页</li></a>
+					<a><li>分类</li></a>
+					<a><li>歌单</li></a>
+					<a><li style="background: #191919;color: #f60;">我的收藏</li></a>
+					<a><li>下载客户端</li></a>
+				</ul>
+			</div>
+		</header>
+		
+		
+		<div id="main">
+			
+		</div>
+		<script>
+			console.log($.cookie('mingzi'));
+			$.get("js/showData.json",function(data){
+				var aaa = JSON.parse($.cookie("mingzi"));
+				var arr = [];
+				for(var i in data){
+					aaa.forEach(function(v){
+					if(data[i].id==v){
+						arr.push(data[i]);
+					}	
+					})			
+
+				}
+
+				var html1 = template("ssrjs",{"lists":arr});
+				
+
+				
+				
+				$('#main').append(html1);
+				$(".sr li").on("mouseenter",function(){
+					$(this).find(".shoucang").stop().show(500);
+				})
+				$(".sr li").on("mouseleave",function(){
+					$(this).find(".shoucang").stop().hide(500);
+				})		
+				$(".shoucang").on("click",function(){
+					if((typeof aaa)=="string"){
+					aaa= JSON.parse(aaa)
+				}
+				var guxinhai = $(this).attr("data-id");
+				aaa.forEach(function(v,k){
+					
+					if(v==guxinhai){aaa.splice(k,1)}
+				})
+				aaa=JSON.stringify(aaa);
+				$.cookie("mingzi",aaa);
+				$(this).parents("li").remove();
+				})
+			})
+		</script>
+		<script id="ssrjs" type="text/html">
+					<ul class="sr">
+						{{each lists as value}}
+						<li>
+							<div data-id="{{value.id}}" class="shoucang">删除</div>
+							<img src="{{value.pic_url}}"/>
+							<p>{{value.title}}</p>
+							<a>{{value.sort_type}}</a>
+							<span>{{value.author}}</span>
+						</li>
+						{{/each}}
+					</ul>
+		</script>
+		
+	</body>
+</html>

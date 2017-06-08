@@ -1,0 +1,74 @@
+{
+	"10001": {
+		"id": "10001",
+		"title": "贴吧泄密局",
+		"author": "百度乐播",
+		"sort_type": "脱口秀",
+		"pic_url": "img/show/10001.jpg",
+		"update_time": "2016-01-19",
+		"play_times": "2,103,053"
+	},
+	"10002": {
+		"id": "10002",
+		"title": "娱乐圈大揭秘",
+		"author": "揭秘小菌",
+		"sort_type": "娱乐八卦",
+		"pic_url": "img/show/10002.jpg",
+		"update_time": "2015-02-09",
+		"play_times": "1,831,302"
+	},
+	"10003": {
+		"id": "10003",
+		"title": "乐动时光",
+		"author": "百度乐播",
+		"sort_type": "治愈系",
+		"pic_url": "img/show/10003.jpg",
+		"update_time": "2016-10-11",
+		"play_times": "2,989,260"
+	},
+	"10004": {
+		"id": "10004",
+		"title": "晚安好音乐",
+		"author": "百度音乐",
+		"sort_type": "音乐推荐",
+		"pic_url": "img/show/10004.jpg",
+		"update_time": "2016-10-11",
+		"play_times": "16,496,640"
+	},
+	"10005": {
+		"id": "10005",
+		"title": "网易轻松一刻",
+		"author": "网易轻松一刻",
+		"sort_type": "脱口秀",
+		"pic_url": "img/show/10005.jpg",
+		"update_time": "2016-09-18",
+		"play_times": "2,022,458"
+	},
+	"10006": {
+		"id": "10006",
+		"title": "电影不无聊",
+		"author": "电影不无聊",
+		"sort_type": "娱乐八卦",
+		"pic_url": "img/show/10006.jpg",
+		"update_time": "2016-10-10",
+		"play_times": "2,131,753"
+	},
+	"10007": {
+		"id": "10007",
+		"title": "晨曦微露电台",
+		"author": "晨曦微露",
+		"sort_type": "治愈系",
+		"pic_url": "img/show/10007.jpg",
+		"update_time": "2016-10-11",
+		"play_times": "11,178,935"
+	},
+	"10008": {
+		"id": "10008",
+		"title": "晓寞の音乐",
+		"author": "寂晓寞czm",
+		"sort_type": "音乐推荐",
+		"pic_url": "img/show/10008.jpg",
+		"update_time": "2016-09-22",
+		"play_times": "8,400,275"
+	}
+}
